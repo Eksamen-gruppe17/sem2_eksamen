@@ -1,0 +1,38 @@
+---
+const { variant } = Astro.props;
+import "../styles/style.css";
+---
+
+<button class={variant + " "}>
+  <slot />
+</button>
+<style>
+  button {
+    padding: 1rem;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 25px;
+    font-family: degular;
+    font-weight: 600;
+    font-size: 25px;
+  }
+  .lilla_btn {
+    background-color: rgb(117, 78, 242);
+    color: white;
+  }
+  .lilla_btn:hover {
+    background-color: none;
+  }
+
+  .black_btn {
+    background-color: black;
+    color: white;
+    border: solid white;
+  }
+  .black_btn:hover {
+    border: none;
+  }
+  .white_btn {
+    background-color: white;
+  }
+</style>
