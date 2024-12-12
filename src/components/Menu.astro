@@ -1,8 +1,8 @@
 ---
 const menuItems = [
-  { label: "Deals", link: "/deals" },
-  { label: "Events", link: "/events" },
-  { label: "Venues", link: "/venues" },
+  { icon: "/imgs/deals_icon.svg", label: "Deals", link: "/deals" },
+  { icon: "/imgs/event.svg", label: "Events", link: "/events" },
+  { icon: "/imgs/venues.svg", label: "Venues", link: "/venues" },
 ];
 ---
 
@@ -11,34 +11,16 @@ const menuItems = [
     {
       menuItems.map((item) => (
         <li>
-          <a href={item.link}>{item.label}</a>
+          <a href={item.link}>
+            {" "}
+            <img src={item.icon} alt="icon" /> <br /> {item.label}
+          </a>
         </li>
       ))
     }
   </ul>
 </nav>
 
-<!-- <nav>
-  <ul>
-    <li>
-      <a href="/pages/deals"
-        ><img src="/imgs/deals_icon.svg" alt="dollarbill icon" />
-        <br /> Deals</a
-      >
-    </li>
-    <li>
-      <a href="../pages/events"
-        ><img src="/imgs/event.svg" alt="Calendar icon" />
-        <br />Events</a
-      >
-    </li>
-    <li>
-      <a href="../pages/venues">
-        <img src="/imgs/venues.svg" alt="Building icon" /> <br />Venues</a
-      >
-    </li>
-  </ul>
-</nav> -->
 <style>
   ul {
     display: flex;
