@@ -4,8 +4,42 @@
 
 <nav>
   <ul>
-    <li><a href="../pages/deals">Deals</a></li>
-    <li><a href="../pages/events">Events</a></li>
-    <li><a href="../pages/venues">Venues</a></li>
+    <li>
+      <a href="../pages/deals"
+        ><img src="/imgs/deals_icon.svg" alt="dollarbill icon" />
+        <br /> Deals</a
+      >
+    </li>
+    <li>
+      <a href="../pages/events"
+        ><img src="/imgs/event.svg" alt="Calendar icon" />
+        <br />Events</a
+      >
+    </li>
+    <li>
+      <a href="../pages/venues">
+        <img src="/imgs/venues.svg" alt="Building icon" /> <br />Venues</a
+      >
+    </li>
   </ul>
 </nav>
+
+<style>
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 15%;
+    list-style: none;
+  }
+  li a {
+    text-decoration: none;
+    font-family: switzer;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+  }
+  li a:hover {
+    text-decoration: underline;
+  }
+</style>
