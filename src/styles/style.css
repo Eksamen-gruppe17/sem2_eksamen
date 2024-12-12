@@ -1,10 +1,10 @@
 @font-face {
     font-family: switzer;
-    src: url(../../public/fonts/Switzer-Variable.woff2);
+    src: url(/fonts/Switzer-Variable.woff2);
 }
 @font-face {
     font-family: switzer_italic;
-    src: url(../../public/fonts/Switzer-VariableItalic.woff2);
+    src: url(/fonts/Switzer-VariableItalic.woff2);
 }
 
 * {
