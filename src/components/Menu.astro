@@ -1,8 +1,24 @@
 ---
-
+const menuItems = [
+  { label: "Deals", link: "/deals" },
+  { label: "Events", link: "/events" },
+  { label: "Venues", link: "/venues" },
+];
 ---
 
 <nav>
+  <ul>
+    {
+      menuItems.map((item) => (
+        <li>
+          <a href={item.link}>{item.label}</a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
+
+<!-- <nav>
   <ul>
     <li>
       <a href="/pages/deals"
@@ -22,8 +38,7 @@
       >
     </li>
   </ul>
-</nav>
-
+</nav> -->
 <style>
   ul {
     display: flex;
