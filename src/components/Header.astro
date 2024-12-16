@@ -1,9 +1,10 @@
 ---
 import Button from "./button.astro";
+import "../styles/style.css";
 ---
 
 <header>
-  <img src="/imgs/logo_lilla.svg" alt="" />
+  <a href="/"><img src="/imgs/logo_lilla.svg" alt="" /></a>
   <Button variant="black_btn">Venue Log in</Button>
 </header>
 <style>
@@ -11,5 +12,6 @@ import Button from "./button.astro";
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    background-color: inherit;
   }
 </style>
