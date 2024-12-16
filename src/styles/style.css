@@ -13,10 +13,19 @@
   box-sizing: border-box;
 }
 
-main {
+body {
   background-color: #161616;
 }
-.grid_1-1 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+
+img{max-width: 100%;}
+.grid_1-1{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
+
+.grid_15-1{
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+}
+
+
