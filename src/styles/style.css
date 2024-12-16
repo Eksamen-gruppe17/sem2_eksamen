@@ -16,9 +16,16 @@
 main{
     background-color: #161616;
 }
+
+img{max-width: 100%;}
 .grid_1-1{
     display: grid;
     grid-template-columns: 1fr 1fr;
+}
+
+.grid_15-1{
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
 }
 
 

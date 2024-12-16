@@ -8,6 +8,67 @@ import Mainlayout from "../layouts/mainlayout.astro";
 ---
 
 <Mainlayout>
+  <section class="hero" class="grid_1-1">
+    <div>
+      <h1><span>SWING</span>BY</h1>
+      <h2>Good times on a budget</h2>
+      <Button variant="white_btn">
+        <img src="/imgs/playstore.svg" alt="" /> Get it on <br />Google Play</Button
+      >
+      <Button variant="black_btn">
+        <img src="/imgs/appstore.svg" alt="" /> Download on the <br /> App Store</Button
+      >
+    </div>
+    <div></div>
+  </section>
+  <div class="btn">
+    <Button variant="lilla_btn">Learn more</Button>
+  </div>
+
   <Menu />
+  <section class="grid_15-1">
+    <div>
+      <p>
+        Discover the best <strong>deals, venues</strong> and <strong
+          >events</strong
+        >
+        near you
+      </p>
+      <Button variant="black_btn">Discover now</Button>
+    </div>
+    <div><img src="/imgs/sect.png" alt="Noget" /></div>
+  </section>
   <Card />
 </Mainlayout>
+
+<style>
+  .grid_15-1 {
+    background-color: #fcfdf7;
+    font-family: degular;
+    font-size: 102px;
+  }
+  strong {
+    font-family: switzer;
+  }
+
+  .hero {
+    font-family: switzer_italic;
+    color: white;
+  }
+  span {
+    color: transparent;
+    -webkit-text-stroke: 1px white;
+  }
+  .hero h1 {
+    font-size: 150px;
+  }
+  .hero h2 {
+    font-size: 60px;
+    font-weight: 550;
+  }
+  .btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+</style>
