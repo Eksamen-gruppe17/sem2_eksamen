@@ -5,9 +5,11 @@ import Footer from "../components/footer.astro";
 import Menu from "../components/Menu.astro";
 import "../styles/style.css";
 import Mainlayout from "../layouts/mainlayout.astro";
+import Header from "../components/Header.astro";
 ---
 
 <Mainlayout>
+  <Header />
   <section class="hero" class="grid_1-1">
     <div>
       <h1><span>SWING</span>BY</h1>
@@ -23,6 +25,8 @@ import Mainlayout from "../layouts/mainlayout.astro";
   </section>
   <div class="btn">
     <Button variant="lilla_btn">Learn more</Button>
+
+    <img src="/imgs/arrow.svg" alt="" />
   </div>
 
   <Menu />
