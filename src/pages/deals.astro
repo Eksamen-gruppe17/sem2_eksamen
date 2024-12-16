@@ -2,9 +2,60 @@
 import Card from "../components/card.astro";
 import "../styles/style.css";
 import Mainlayout from "../layouts/mainlayout.astro";
+import Menu from "../components/Menu.astro";
 ---
 
 <Mainlayout>
-  <h1>Hej</h1>
-  <Card />
+  <div class="hero">
+    <h1 class="tekst">Discover the best <span class="bold">deals, venues</span> and <span class="bold">events</span> near you</h1>
+    <img src="imgs/hero_deal.webp" alt="">
+  </div>
+  <Menu />
+  <h2>Deals</h2>
+  <div class="flex">
+    <Card />
+    <Card />
+    <Card />
+  </div>
 </Mainlayout>
+
+<style>
+  img {
+    max-width: 100%;
+    border-radius: 30px;
+  }
+  .tekst {
+    color: white;
+font-family: degular;
+font-weight: 100;
+font-size: 100px;
+line-height: 5rem;
+  }
+
+  .bold {
+    font-weight: 600;
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 5rem 10rem 15rem 10rem;
+    gap: 20px;
+    align-items: center;
+
+  }
+h2 {
+  margin-left: 10rem;
+  font-size: 64px;
+  font-family: "degular";
+  font-style: normal;
+  color: white;
+}
+  .flex {
+    display: flex;
+    justify-content: center;
+  }
+  body {
+    background-color: #161616;
+  }
+</style>

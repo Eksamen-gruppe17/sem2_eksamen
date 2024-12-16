@@ -1,20 +1,20 @@
 @font-face {
-    font-family: switzer;
-    src: url(/fonts/Switzer-Variable.woff2);
+  font-family: switzer;
+  src: url(/fonts/Switzer-Variable.woff2);
 }
 @font-face {
-    font-family: switzer_italic;
-    src: url(/fonts/Switzer-VariableItalic.woff2);
+  font-family: switzer_italic;
+  src: url(/fonts/Switzer-VariableItalic.woff2);
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-main{
-    background-color: #161616;
+main {
+  background-color: #161616;
 }
 
 img{max-width: 100%;}
