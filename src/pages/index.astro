@@ -27,7 +27,7 @@ import Header from "../components/Header.astro";
 
     <img src="/imgs/arrow.svg" alt="" />
   </div>
-
+  <video autoplay loop src="/imgs/index_video.mp4"></video>
   <Menu />
   <section class="grid_15-1">
     <div>
@@ -71,7 +71,12 @@ import Header from "../components/Header.astro";
   }
   .btn {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  video {
+    max-width: 90%;
   }
 </style>
