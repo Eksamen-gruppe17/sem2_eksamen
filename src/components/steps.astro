@@ -22,7 +22,32 @@ import "../styles/style.css";
     img {
         width: 100%;
     }
+    
+    .container {
+        display: flex;
+        flex-direction: column;
+        margin: 4rem 8rem;
+        gap: 50px;
+        align-items: center;   
+        font-family: degular-text;
+        font-weight: 100;
+        font-size: 25px; 
+    }
 
+    .step {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .tekst {
+        max-width: 250px;
+        margin: auto;
+        text-align: center;
+        word-break: break-word;
+        align-self: flex-end;
+    }
+
+          @media screen and (min-width: 800px) {
     .container {
         display: flex;
         flex-direction: row;
@@ -46,5 +71,7 @@ import "../styles/style.css";
         word-break: break-word;
         align-self: flex-end;
     }
+        
+      }
 
 </style>
