@@ -7,6 +7,7 @@ import "../styles/style.css";
 import Mainlayout from "../layouts/mainlayout.astro";
 import Events from "../components/events.astro";
 import Header from "../components/Header.astro";
+import Steps from "../components/steps.astro";
 
 const data = await fetch(
   "https://ksreqhsmdxayccugiwmb.supabase.co/rest/v1/swingby",
@@ -23,67 +24,130 @@ console.log(data);
 ---
 
 <Mainlayout>
-  <section class="hero" class="grid_1-1">
-    <div>
-      <h1><span>SWING</span>BY</h1>
-      <h2>Good times on a budget</h2>
-      <Button variant="white_btn">
-        <img src="/imgs/playstore.svg" alt="" /> Get it on <br />Google Play</Button
-      >
-      <Button variant="black_btn">
-        <img src="/imgs/appstore.svg" alt="" /> Download on the <br /> App Store</Button
-      >
-    </div>
-    <div></div>
+  <section class="hero">
+      <div class="hero_tekst">
+        <h1><span id="outline">SWING</span>BY</h1>
+        <h2>Good times on a budget</h2>
+        <Button variant="white_btn"><img src="/imgs/playstore.svg" alt="" /> Get it on <br />Google Play</Button>
+        <Button variant="black_btn"><img src="/imgs/appstore.svg" alt="" /> Download on the <br /> App Store</Button>
+      </div>
+        <video class="hero_video" autoplay loop src="imgs/adamstelefon.mp4"></video>
   </section>
-  <div class="btn">
-    <Button variant="lilla_btn">Learn more</Button>
 
-    <img src="/imgs/arrow.svg" alt="" />
+  <div class="btn">
+    <a href="#video"><Button variant="lilla_btn">Learn more</Button></a>
+
+    <img id="hero_pil" src="/imgs/arrow.svg" alt="" />
   </div>
-  <video autoplay loop src="/imgs/index_video.mp4"></video>
-  <Menu />
-  <section class="grid_15-1">
-    <div>
-      <p>
-        Discover the best <strong>deals, venues</strong> and <strong
-          >events</strong
-        >
-        near you
-      </p>
-      <Button variant="black_btn">Discover now</Button>
+
+  <video id="video" autoplay loop src="/imgs/index_video.mp4"></video></a>
+
+
+    <div class="grid_15-1">
+      <div class="discover">
+        <p class="discover_tekst">Discover the best <span class="bold">deals, venues</span> and <span class="bold">events</span> near you</p>
+        <Button variant="black_btn">Discover now</Button>
+      </div>
+      <div class="sect_img">
+        <img src="/imgs/sect.png" alt="Noget" />
+      </div>
     </div>
-    <div><img class="sect_img" src="/imgs/sect.png" alt="Noget" /></div>
-  </section>
-  <Card />
+
+<section class="howtoswingby">
+<h2 id="howto_overskrift">How To <span id="italic">SWINGBY</span></h2>
+<Steps/>
+<h3 id="download_app">Download the app</h3>
+  <div class="download_knapper">
+    <Button variant="white_btn">
+    <img src="/imgs/playstore.svg" alt="" /> Get it on <br />Google Play</Button>
+    <Button variant="black_btn">
+    <img src="/imgs/appstore.svg" alt="" /> Download on the <br /> App Store</Button>
+  </div>
+</section>
+
+<section class="grå_baggrund">
+  <h2 class="sektion_overskrift">Current Deals</h2>
+</section>
+
+  <h2 class="sektion_overskrift">Find your location</h2>
+
+<div class="kort">
+  <iframe 
+    width="1000" 
+    height="600" 
+    frameborder="0" 
+    scrolling="no" 
+    marginheight="0" 
+    marginwidth="0" 
+    src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Copenhagen+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+  </iframe>
+</div>
+
+  <!-- <Card /> -->
 </Mainlayout>
 
 <style>
-  .grid_15-1 {
-    background-color: #fcfdf7;
-    font-family: degular;
-    font-size: 102px;
-  }
-  strong {
-    font-family: switzer;
-  }
+html {
+  scroll-behavior: smooth;
+}
 
-  .hero {
-    font-family: switzer_italic;
-    color: white;
-  }
-  span {
-    color: transparent;
-    -webkit-text-stroke: 1px white;
-  }
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 5rem 5rem 0 5rem;
+  gap: 25px;
+}
+
+  .hero_tekst {
+    grid-column: 1 / 2;
+  line-height: 7rem;
+}
+
+.hero_video {
+  width: 130%;
+  grid-column: 2 / 3;
+}
   .hero h1 {
-    font-size: 150px;
-    letter-spacing: -11px;
+    font-size: 170px;
   }
   .hero h2 {
-    font-size: 60px;
+    font-size: 75px;
     font-weight: 550;
-    letter-spacing: -4px;
+
+  }
+
+
+  .grid_15-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    font-family: degular-display;
+    padding: 10rem;
+    background-color: #fcfdf7;
+  }
+
+  .discover {
+        grid-column: 1 / 2;
+      justify-self: center;
+      align-self: center;
+  }
+
+.sect_img {
+  grid-column: 2 / 3;
+  justify-self: center;
+}
+
+
+  .discover_tekst {
+    font-size: 90px;
+    line-height: 5rem;
+    max-width: 750px;
+  }
+  .bold {
+    font-weight: 600;
+  }
+  #hero_pil {
+    margin-top: 1rem;
   }
   .btn {
     display: flex;
@@ -92,7 +156,68 @@ console.log(data);
     align-items: center;
     flex-shrink: 0;
   }
-  video {
-    max-width: 90%;
+  
+  .hero {
+    font-family: degular-display;
+    font-style: italic;
+    color: white;
+  }
+
+  #outline {
+    color: transparent;
+    -webkit-text-stroke: 1px white;
+  }
+
+  #video {
+    max-width: 100%;
+  }
+
+  #italic {
+    font-style: italic;
+  }
+
+  .howtoswingby {
+    font-family: degular-display;
+    font-size: 100px;
+    color: #FCFDF7;
+    justify-self: center;
+    margin-top: 5rem;
+    margin-bottom: 10rem;
+  }
+
+  #howto_overskrift {
+    justify-self: center;
+  }
+
+  .download_knapper {
+    justify-self: center;
+  }
+
+  #download_app {
+    font-size: 60px;
+    justify-self: center;
+    margin-bottom: 2rem;
+  }
+
+
+  .sektion_overskrift {
+    color: #FCFDF7;
+font-family: degular-display;
+    font-size: 134px;
+    justify-self: center;
+    margin-bottom: 2rem;
+  }
+
+  .kort {
+    display: block;
+    justify-self: center;
+    margin-bottom: 10rem;
+  }
+
+  .grå_baggrund {
+    background-color: #1D1C1C;
+    width: 100%;
+    height: 600px;
+    border-radius: 30px 30px 0 0;
   }
 </style>
