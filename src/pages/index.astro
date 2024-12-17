@@ -28,8 +28,10 @@ console.log(data);
       <div class="hero_tekst">
         <h1><span id="outline">SWING</span>BY</h1>
         <h2>Good times on a budget</h2>
-        <Button variant="white_btn"><img src="/imgs/playstore.svg" alt="" /> Get it on <br />Google Play</Button>
-        <Button variant="black_btn"><img src="/imgs/appstore.svg" alt="" /> Download on the <br /> App Store</Button>
+        <div class="hero_knapper">
+          <Button variant="white_btn"><img src="/imgs/playstore.svg" alt="" /> Get it on <br />Google Play</Button>
+          <Button variant="black_btn"><img src="/imgs/appstore.svg" alt="" /> Download on the <br /> App Store</Button>
+        </div>
       </div>
         <video class="hero_video" autoplay loop src="imgs/adamstelefon.mp4"></video>
   </section>
@@ -101,6 +103,12 @@ html {
   .hero_tekst {
     grid-column: 1 / 2;
   line-height: 7rem;
+        justify-self: center;
+      align-self: center;
+}
+
+.hero_knapper {
+  justify-self: center;
 }
 
 .hero_video {
