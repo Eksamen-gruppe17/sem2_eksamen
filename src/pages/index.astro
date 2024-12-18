@@ -1,14 +1,11 @@
 ---
-<<<<<<< HEAD
 import Button from "../components/Button.astro";
 import Mainlayout from "../layouts/Mainlayout.astro";
 import Steps from "../components/Steps.astro";
-=======
 import Card from "../components/card.astro";
 import Button from "../components/button.astro";
 import Footer from "../components/footer.astro";
 import Menu from "../components/Menu.astro";
->>>>>>> 5acc4eadc99def01ffe86f9c695a3c49c72c1292
 import "../styles/style.css";
 
 const data = await fetch("https://ksreqhsmdxayccugiwmb.supabase.co/rest/v1/swingby", {
@@ -39,7 +36,7 @@ console.log(data);
     <img id="hero_pil" src="/imgs/arrow.svg" alt="" />
   </div>
 
-  <video id="video" autoplay loop muted src="/imgs/index_video.mp4"></video></Mainlayout
+  <video id="video" autoplay loop muted src="/imgs/index_video.mp4"></video>
 >
 
 <div class="discover_sektion">
@@ -50,7 +47,7 @@ console.log(data);
   <img class="sect_img" src="/imgs/mikkellers_sect.webp" alt="Noget" />
 </div>
 
-<<<<<<< HEAD
+
   <section class="howtoswingby">
     <h2 id="howto_overskrift">How To <span id="italic">SWINGBY</span></h2>
     <Steps />
@@ -86,29 +83,10 @@ console.log(data);
       marginheight="0"
       marginwidth="0"
       src="https://maps.google.com/maps?width=100%25&height=600&hl=en&q=Copenhagen+(My%20Business%20Name)&t=&z=14&ie=UTF8&iwloc=B&output=embed"
-    >
-    </iframe>
-=======
-<section class="howtoswingby">
-  <h2 id="howto_overskrift">How To <span id="italic">SWINGBY</span></h2>
-  <Steps />
-  <h3 id="download_app">Download the app</h3>
-  <div class="download_knapper">
-    <Button variant="white_btn"> <img src="/imgs/playstore.svg" alt="" /> Get it on <br />Google Play</Button>
-    <Button variant="black_btn"> <img src="/imgs/appstore.svg" alt="" /> Download on the <br /> App Store</Button>
->>>>>>> 5acc4eadc99def01ffe86f9c695a3c49c72c1292
-  </div>
-</section>
+    ></iframe>
+</Mainlayout>
 
-<section class="grå_baggrund">
-  <h2 class="sektion_overskrift">Current Deals</h2>
-  <!-- <Card /> -->
-</section>
-<h2 class="sektion_overskrift">Find your location</h2>
 
-<div class="kort">
-  <iframe width="1000" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&height=600&hl=en&q=Copenhagen+(My%20Business%20Name)&t=&z=14&ie=UTF8&iwloc=B&output=embed"> </iframe>
-</div>
 
 <style>
   a {
