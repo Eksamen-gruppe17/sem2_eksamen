@@ -2,19 +2,15 @@
 import "../styles/style.css";
 import Mainlayout from "../layouts/mainlayout.astro";
 import Menu from "../components/Menu.astro";
-import Button from "../components/Button.astro";
+import Button from "../components/button.astro";
 import Card2 from "../components/Card2.astro";
 
-const data = await fetch(
-  "https://ksreqhsmdxayccugiwmb.supabase.co/rest/v1/swingby",
-  {
-    method: "GET",
-    headers: {
-      apikey:
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtzcmVxaHNtZHhheWNjdWdpd21iIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzM4MTk3MzAsImV4cCI6MjA0OTM5NTczMH0.PokJ8dTqtkRlPRLfB1cdL0grpnmsr5hdCpBQzVDHSJc",
-    },
-  }
-).then((res) => res.json());
+const data = await fetch("https://ksreqhsmdxayccugiwmb.supabase.co/rest/v1/swingby", {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtzcmVxaHNtZHhheWNjdWdpd21iIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzM4MTk3MzAsImV4cCI6MjA0OTM5NTczMH0.PokJ8dTqtkRlPRLfB1cdL0grpnmsr5hdCpBQzVDHSJc",
+  },
+}).then((res) => res.json());
 
 console.log(data);
 ---
@@ -23,13 +19,12 @@ console.log(data);
   <div class="hero">
     <img id="heroimg" src="imgs/hero_deal.webp" alt="" />
     <h1 class="tekst">
-      Discover the best <span class="bold">deals, venues</span> and <span
-        class="bold">events</span
-      > near you
+      Discover the best <span class="bold">deals, venues</span> and <span class="bold">events</span> near you
     </h1>
     <img id="pil" src="imgs/pil1.svg" alt="" />
   </div>
   <Menu />
+
   <h1 class="eventh1">Deals</h1>
   <section class="grid_1-1-1">
     {
@@ -39,11 +34,9 @@ console.log(data);
           <a href={`${data.type}/${data.slug}`}>
             <div class="container" class={data.slug}>
               <img src={data.img} alt="" />
-              <div class="tilbud">
-                <h4>{data.title}</h4>
-              </div>
               <div class="bund">
                 <div class="text">
+                  <h4>{data.title}</h4>
                   <p>{data.bydel}</p>
                   <p>{data.date_time}</p>
                 </div>
@@ -59,21 +52,16 @@ console.log(data);
 </Mainlayout>
 
 <style>
+  body {
+    background-color: #161616;
+  }
+
   img {
-    max-width: 100%;
+    width: 100%;
     border-radius: 30px;
-    max-height: 373px;
-    
   }
   .container {
     position: relative;
-    display: grid;
-    min-height: 100px;
-    max-height: 373px;
-    max-width: 373px;
-    margin: auto;
-    margin-bottom: 20px;
-   
   }
   .text {
     position: absolute;
@@ -83,29 +71,18 @@ console.log(data);
     font-family: switzer;
   }
 
-  .tilbud {
-    position: absolute;
-    top: 18px;
-    padding-top: 2rem;
-    justify-self: center;
-    grid-column: 1/2;
-    grid-row: 1 / 2;
-    font-family: switzer;
-    color: white;
-    font-size: 25px;
+  .grid_1-1-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1em;
   }
-
   .eventh1 {
     color: white;
     font-family: degular;
-    text-align: center;
-    padding: 20px;
-    margin-top: 30px;
   }
   .bund {
     display: grid;
-    repeat(auto-fit, minmax(200px, 1fr))
-    
+    grid-template-columns: 1fr 0.5fr;
   }
 
   h4 {
@@ -167,13 +144,7 @@ console.log(data);
     justify-content: center;
     margin-bottom: 10rem;
   }
-  @media (max-width: 1000px) and (min-width: 800px) {
-    .grid_1-1-1{
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-    }
-  }
+
   @media screen and (min-width: 800px) {
     img {
       max-width: 100%;
