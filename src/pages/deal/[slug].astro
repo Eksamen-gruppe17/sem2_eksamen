@@ -28,17 +28,14 @@ console.log(event);
 
 <Mainlayout>
   <div class="hero">
-    <!-- <h1>{title}</h1> -->
     <img src={event.img} alt="" />
-    <!-- <p>{date_time}</p> -->
+
     <p id="dato_og_tid">{event.date_time}</p>
     <h1 id="overskrift">{event.title}</h1>
   </div>
 
   <div class="tekst_sektion">
     <div class="adresse_og_beskrivelse">
-      <!-- <h3>{address}</h3>
-          <h3>{bydel}</h3> -->
       <h3>{event.address}</h3>
       <h3>{event.bydel}</h3>
       <p class="beskrivelse">
