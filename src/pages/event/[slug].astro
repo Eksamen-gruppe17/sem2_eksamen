@@ -1,0 +1,34 @@
+---
+import Mainlayout from "../../layouts/mainlayout.astro";
+export async function getStaticPaths() {
+  const data = await fetch(
+    "https://ksreqhsmdxayccugiwmb.supabase.co/rest/v1/swingby",
+    {
+      method: "GET",
+      headers: {
+        apikey:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtzcmVxaHNtZHhheWNjdWdpd21iIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzM4MTk3MzAsImV4cCI6MjA0OTM5NTczMH0.PokJ8dTqtkRlPRLfB1cdL0grpnmsr5hdCpBQzVDHSJc",
+      },
+    }
+  ).then((res) => res.json());
+
+  return data.map((event) => {
+    return {
+      params: { slug: event.slug },
+      props: { event },
+    };
+  });
+}
+
+const { event } = Astro.props;
+console.log(event);
+---
+
+<Mainlayout>
+  <img src={event.img} alt="" />
+  <p>{event.date_time}</p>
+  <h1>{event.title}</h1>
+  <h2>{event.address}</h2>
+  <h2>{event.bydel}</h2>
+  <p>{event.about}</p>
+</Mainlayout>
