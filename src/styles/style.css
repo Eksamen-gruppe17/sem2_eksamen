@@ -23,6 +23,12 @@ img{max-width: 100%;}
     grid-template-columns: 1fr 1fr;
 }
 
+.grid_1-1-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1em;
+}
+
 .grid_15-1{
     display: grid;
     grid-template-columns: 1fr 0.5fr;
