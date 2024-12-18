@@ -1,6 +1,6 @@
 ---
 import Button from "../../components/Button.astro";
-import Mainlayout from "../../layouts/mainlayout.astro";
+import Mainlayout from "../../layouts/Mainlayout.astro";
 
 export async function getStaticPaths() {
   const data = await fetch(
@@ -42,7 +42,22 @@ console.log(event);
         {event.about}
       </p>
     </div>
-    <div class="card_og_åbningstid"></div>
+    <div class="card_og_åbningstid">
+                  <div class="container">
+              <img class="card_img" src="../imgs/gorilla.webp" alt="" />
+              <div class="tilbud">
+                <h4>Gorilla</h4>
+              </div>
+              <div class="bund">
+                <div class="text">
+                  <p>København V</p>
+                </div>
+                <div class="button">
+                  <Button variant="lilla_btn">More info</Button>
+                </div>
+              </div>
+            </div>
+    </div>
   </div>
 </Mainlayout>
 
@@ -75,7 +90,7 @@ console.log(event);
   }
 
   .adresse_og_beskrivelse {
-    justify-self: center;
+    /* justify-self: center; */
   }
 
   .card_og_åbningstid {
@@ -118,6 +133,54 @@ console.log(event);
     body {
       background-color: #fcfdf7;
     }
+
+      .card_img {
+    max-width: 100%;
+    border-radius: 30px;
+    max-height: 373px;
+    
+  }
+  .container {
+    position: relative;
+    display: grid;
+    min-height: 100px;
+    max-height: 373px;
+    max-width: 373px;
+    margin: auto;
+    margin-bottom: 20px;
+   
+  }
+  .text {
+    position: absolute;
+    bottom: 18px;
+    left: 16px;
+    color: white;
+    font-family: switzer;
+  }
+
+    .tilbud {
+    position: absolute;
+    padding-top: 2rem;
+    justify-self: center;
+    grid-column: 1/2;
+    grid-row: 1 / 2;
+    font-family: switzer;
+    color: white;
+    font-size: 25px;
+  }
+
+    .bund {
+    display: grid;
+    repeat(auto-fit, minmax(200px, 1fr))
+  }
+
+    .button {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+  }
+
+
     img {
       width: 100%;
       box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.5);
@@ -132,7 +195,7 @@ console.log(event);
 
     #dato_og_tid {
       position: absolute;
-      bottom: 170px;
+      bottom: 120px;
       left: 50px;
       font-family: degular-display;
       font-size: 50px;
@@ -144,7 +207,7 @@ console.log(event);
       bottom: 20px;
       left: 50px;
       font-family: degular-display;
-      font-size: 170px;
+      font-size: 100px;
       color: white;
     }
 
@@ -159,7 +222,6 @@ console.log(event);
     .adresse_og_beskrivelse {
       grid-column: 1 / 2;
       grid-row: 1 / 2;
-      justify-self: center;
     }
 
     .card_og_åbningstid {
@@ -170,12 +232,12 @@ console.log(event);
 
     h3,
     h4 {
-      color: #568cff;
+      color: #fcfdf7;
     }
 
     h3 {
-      font-size: 74px;
-      line-height: 4.5rem;
+      font-size: 50px;
+      line-height: 3.5rem;
     }
 
     h4 {

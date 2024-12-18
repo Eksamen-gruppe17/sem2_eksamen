@@ -1,13 +1,8 @@
 ---
-import Card from "../components/card.astro";
 import Button from "../components/Button.astro";
-import Footer from "../components/footer.astro";
-import Menu from "../components/Menu.astro";
+import Mainlayout from "../layouts/Mainlayout.astro";
+import Steps from "../components/Steps.astro";
 import "../styles/style.css";
-import Mainlayout from "../layouts/mainlayout.astro";
-import Events from "../components/Events.astro";
-import Header from "../components/Header.astro";
-import Steps from "../components/steps.astro";
 
 const data = await fetch(
   "https://ksreqhsmdxayccugiwmb.supabase.co/rest/v1/swingby",
@@ -97,7 +92,6 @@ console.log(data);
 
   <section class="grå_baggrund">
     <h2 class="sektion_overskrift">Current Deals</h2>
-    <!-- <Card /> -->
   </section>
   <h2 class="sektion_overskrift">Find your location</h2>
 

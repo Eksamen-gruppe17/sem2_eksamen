@@ -4,34 +4,30 @@ const { address } = Astro.props;
 const { date_time } = Astro.props;
 const { img } = Astro.props;
 const { bydel } = Astro.props;
-import Card from "../components/card.astro";
+import Button from "../components/Button.astro";
 import "../styles/style.css";
-import Mainlayout from "../layouts/mainlayout.astro";
+import Mainlayout from "../layouts/Mainlayout.astro";
 ---
 
 
 <Mainlayout>
     <div class="hero">
-        <!-- <h1>{title}</h1> -->
         <img src="imgs/barlummi_hq.webp" alt="">
-        <!-- <p>{date_time}</p> -->
          <p id="dato_og_tid">Date_time</p>
         <h1 id="overskrift">Dynamisk Titel</h1>
     </div>
 
     <div class="tekst_sektion">
         <div class="adresse_og_beskrivelse">
-            <!-- <h3>{address}</h3>
-            <h3>{bydel}</h3> -->
             <h3>Kompagnistræde 12</h3>
             <h3>København</h3>
             <p class="beskrivelse">Bar Lummi can be a cosy and stylish place serving unique cocktails, local beers and light bites in a relaxed atmosphere inspired by Scandinavian minimalism and natural materials.</p>
         </div>
         <div class="card_og_åbningstid">
-            <Card />
         </div>
     </div>
 </Mainlayout>
+
 
 
 <style>
@@ -136,7 +132,7 @@ import Mainlayout from "../layouts/mainlayout.astro";
              bottom: 20px;
              left: 50px;
              font-family: degular-display;
-             font-size: 170px;
+             font-size: 100px;
              color: white;
          }
      
