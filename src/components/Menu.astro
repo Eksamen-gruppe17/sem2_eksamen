@@ -13,7 +13,7 @@ const menuItems = [
         <li>
           <a href={item.link}>
             {" "}
-            <img src={item.icon} alt="icon" /> <br /> {item.label}
+            <img class="lilla" src={item.icon} alt="icon" /> <br /> {item.label}
           </a>
         </li>
       ))
@@ -38,5 +38,12 @@ const menuItems = [
   }
   li a:hover {
     text-decoration: underline;
+  }
+
+  .lilla:hover {
+    filter: invert(53%) sepia(69%) saturate(7111%) hue-rotate(240deg) brightness(95%) contrast(100%);
+  }
+  a {
+    text-decoration: none;
   }
 </style>
