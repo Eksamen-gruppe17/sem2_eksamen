@@ -1,5 +1,7 @@
 ---
+import Button from "../../components/Button.astro";
 import Mainlayout from "../../layouts/mainlayout.astro";
+
 export async function getStaticPaths() {
   const data = await fetch(
     "https://ksreqhsmdxayccugiwmb.supabase.co/rest/v1/swingby",
@@ -25,10 +27,176 @@ console.log(event);
 ---
 
 <Mainlayout>
-  <img src={event.img} alt="" />
-  <p>{event.date_time}</p>
-  <h1>{event.title}</h1>
-  <h2>{event.address}</h2>
-  <h2>{event.bydel}</h2>
-  <p>{event.about}</p>
+  <div class="hero">
+    <img src={event.img} alt="" />
+
+    <p id="dato_og_tid">{event.date_time}</p>
+    <h1 id="overskrift">{event.title}</h1>
+  </div>
+
+  <div class="tekst_sektion">
+    <div class="adresse_og_beskrivelse">
+      <h3>{event.address}</h3>
+      <h3>{event.bydel}</h3>
+      <p class="beskrivelse">
+        {event.about}
+      </p>
+    </div>
+    <div class="card_og_åbningstid"></div>
+  </div>
 </Mainlayout>
+
+<style>
+  body {
+    background-color: #fcfdf7;
+  }
+
+  img {
+    width: 100%;
+    box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  .hero {
+    position: relative;
+  }
+
+  #overskrift {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-family: degular-display;
+    font-size: 50px;
+    color: white;
+  }
+
+  .tekst_sektion {
+    font-family: degular;
+    margin: 5rem 2rem;
+  }
+
+  .adresse_og_beskrivelse {
+    justify-self: center;
+  }
+
+  .card_og_åbningstid {
+    justify-self: center;
+  }
+
+  h3,
+  h4 {
+    color: #568cff;
+  }
+
+  h3 {
+    font-size: 30px;
+    line-height: 1.8rem;
+  }
+
+  h4 {
+    font-size: 25px;
+    justify-self: center;
+  }
+
+  p {
+    font-family: degular-text;
+    font-weight: 100;
+  }
+
+  .beskrivelse {
+    font-size: 20px;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .åbningstider {
+    font-size: 20px;
+    font-weight: 600;
+    justify-self: center;
+  }
+
+  @media screen and (min-width: 800px) {
+    body {
+      background-color: #fcfdf7;
+    }
+    img {
+      width: 100%;
+      box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.5);
+      height: 1000px;
+      object-fit: cover;
+    }
+
+    .hero {
+      position: relative;
+      text-align: center;
+    }
+
+    #dato_og_tid {
+      position: absolute;
+      bottom: 170px;
+      left: 50px;
+      font-family: degular-display;
+      font-size: 50px;
+      color: white;
+    }
+
+    #overskrift {
+      position: absolute;
+      bottom: 20px;
+      left: 50px;
+      font-family: degular-display;
+      font-size: 170px;
+      color: white;
+    }
+
+    .tekst_sektion {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      font-family: degular;
+      margin: 5rem 10rem 5rem 10rem;
+      gap: 20px;
+    }
+
+    .adresse_og_beskrivelse {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+      justify-self: center;
+    }
+
+    .card_og_åbningstid {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+      justify-self: center;
+    }
+
+    h3,
+    h4 {
+      color: #568cff;
+    }
+
+    h3 {
+      font-size: 74px;
+      line-height: 4.5rem;
+    }
+
+    h4 {
+      font-size: 38px;
+      justify-self: center;
+    }
+
+    p {
+      font-family: degular-text;
+      font-weight: 100;
+    }
+
+    .beskrivelse {
+      font-size: 34px;
+      margin-top: 4rem;
+    }
+
+    .åbningstider {
+      font-size: 26px;
+      font-weight: 600;
+      justify-self: center;
+    }
+  }
+</style>

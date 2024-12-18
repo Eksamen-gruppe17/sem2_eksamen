@@ -30,7 +30,6 @@ console.log(data);
     <img id="pil" src="imgs/pil1.svg" alt="" />
   </div>
   <Menu />
-
   <h1 class="eventh1">Deals</h1>
   <section class="grid_1-1-1">
     {
@@ -40,9 +39,11 @@ console.log(data);
           <a href={`${data.type}/${data.slug}`}>
             <div class="container" class={data.slug}>
               <img src={data.img} alt="" />
+              <div class="tilbud">
+                <h4>{data.title}</h4>
+              </div>
               <div class="bund">
                 <div class="text">
-                  <h4>{data.title}</h4>
                   <p>{data.bydel}</p>
                   <p>{data.date_time}</p>
                 </div>
@@ -59,11 +60,20 @@ console.log(data);
 
 <style>
   img {
-    width: 100%;
+    max-width: 100%;
     border-radius: 30px;
+    max-height: 373px;
+    
   }
   .container {
     position: relative;
+    display: grid;
+    min-height: 100px;
+    max-height: 373px;
+    max-width: 373px;
+    margin: auto;
+    margin-bottom: 20px;
+   
   }
   .text {
     position: absolute;
@@ -73,13 +83,29 @@ console.log(data);
     font-family: switzer;
   }
 
+  .tilbud {
+    position: absolute;
+    top: 18px;
+    padding-top: 2rem;
+    justify-self: center;
+    grid-column: 1/2;
+    grid-row: 1 / 2;
+    font-family: switzer;
+    color: white;
+    font-size: 25px;
+  }
+
   .eventh1 {
     color: white;
     font-family: degular;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
   }
   .bund {
     display: grid;
-    grid-template-columns: 1fr 0.5fr;
+    repeat(auto-fit, minmax(200px, 1fr))
+    
   }
 
   h4 {
@@ -141,7 +167,13 @@ console.log(data);
     justify-content: center;
     margin-bottom: 10rem;
   }
-
+  @media (max-width: 1000px) and (min-width: 800px) {
+    .grid_1-1-1{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
   @media screen and (min-width: 800px) {
     img {
       max-width: 100%;
