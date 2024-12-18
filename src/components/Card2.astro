@@ -14,26 +14,35 @@ const data = await fetch(
 console.log(data);
 ---
 
-<section class="grid_1-1-1">
-  {
-    data
-      .filter((item) => item.type === "venue")
-      .map((data) => (
-        <a href={`${data.type}/${data.slug}`}>
-          <div class="container" class={data.slug}>
-            <img src={data.img} alt="" />
-            <div class="bund">
-              <div class="text">
-                <h4>{data.title}</h4>
-                <p>{data.bydel}</p>
-                <p>{data.date_time}</p>
-              </div>
-              <div class="button">
-                <Button variant="lilla_btn">More info</Button>
-              </div>
-            </div>
-          </div>
-        </a>
-      ))
+<a href={`${data.type}/${data.slug}`}>
+  <div class="container" class={data.slug}>
+    <img src={data.img} alt="" />
+    <div class="bund">
+      <div class="text">
+        <h4>{data.title}</h4>
+        <p>{data.bydel}</p>
+        <p>{data.date_time}</p>
+      </div>
+      <div class="button">
+        <Button variant="lilla_btn">More info</Button>
+      </div>
+    </div>
+  </div>
+</a>
+
+<style>
+  img {
+    width: 100%;
+    border-radius: 30px;
   }
-</section>
+  .container {
+    position: relative;
+  }
+  .text {
+    position: absolute;
+    bottom: 18px;
+    left: 16px;
+    color: white;
+    font-family: switzer;
+  }
+</style>

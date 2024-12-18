@@ -31,11 +31,6 @@ console.log(data);
   </div>
   <Menu />
 
-  <!-- <h2>Events</h2>
-  <div class="flex">
-    <Card />
-  </div> -->
-
   <h1 class="eventh1">Deals</h1>
   <section class="grid_1-1-1">
     {
@@ -60,7 +55,6 @@ console.log(data);
         ))
     }
   </section>
-  <Card2 />
 </Mainlayout>
 
 <style>
@@ -74,6 +68,13 @@ console.log(data);
   }
   .container {
     position: relative;
+  }
+  .text {
+    position: absolute;
+    bottom: 18px;
+    left: 16px;
+    color: white;
+    font-family: switzer;
   }
 
   .grid_1-1-1 {
@@ -89,13 +90,7 @@ console.log(data);
     display: grid;
     grid-template-columns: 1fr 0.5fr;
   }
-  .text {
-    position: absolute;
-    bottom: 18px;
-    left: 16px;
-    color: white;
-    font-family: switzer;
-  }
+
   h4 {
     padding-bottom: 15px;
   }
