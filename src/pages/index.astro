@@ -1,6 +1,6 @@
 ---
 import Card from "../components/card.astro";
-import Button from "../components/Button.astro";
+import Button from "../components/button.astro";
 import Footer from "../components/footer.astro";
 import Menu from "../components/Menu.astro";
 import "../styles/style.css";
@@ -9,16 +9,12 @@ import Events from "../components/Events.astro";
 import Header from "../components/Header.astro";
 import Steps from "../components/steps.astro";
 
-const data = await fetch(
-  "https://ksreqhsmdxayccugiwmb.supabase.co/rest/v1/swingby",
-  {
-    method: "GET",
-    headers: {
-      apikey:
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtzcmVxaHNtZHhheWNjdWdpd21iIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzM4MTk3MzAsImV4cCI6MjA0OTM5NTczMH0.PokJ8dTqtkRlPRLfB1cdL0grpnmsr5hdCpBQzVDHSJc",
-    },
-  }
-).then((res) => res.json());
+const data = await fetch("https://ksreqhsmdxayccugiwmb.supabase.co/rest/v1/swingby", {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtzcmVxaHNtZHhheWNjdWdpd21iIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzM4MTk3MzAsImV4cCI6MjA0OTM5NTczMH0.PokJ8dTqtkRlPRLfB1cdL0grpnmsr5hdCpBQzVDHSJc",
+  },
+}).then((res) => res.json());
 
 console.log(data);
 ---
@@ -30,25 +26,10 @@ console.log(data);
       <h2>Good times on a budget</h2>
     </div>
     <div class="hero_knapper">
-      <a
-        href="https://play.google.com/store/apps/details?id=dk.swing.app&pli=1"
-        target="_blank"
-      >
-        <Button variant="white_btn">
-          <img src="/imgs/playstore.svg" alt="" /> Get it on <br />Google Play</Button
-        >
-      </a>
-      <a
-        href="https://apps.apple.com/us/app/swing/id6443537026"
-        target="_blank"
-      >
-        <Button variant="black_btn"
-          ><img src="/imgs/appstore.svg" alt="" /> Download on the <br /> App Store</Button
-        >
-      </a>
+      <Button variant="white_btn"><img src="/imgs/playstore.svg" alt="" /> Get it on <br />Google Play</Button>
+      <Button variant="black_btn"><img src="/imgs/appstore.svg" alt="" /> Download on the <br /> App Store</Button>
     </div>
-    <video class="hero_video" autoplay loop muted src="imgs/adamstelefon.mp4"
-    ></video>
+    <video class="hero_video" autoplay loop muted src="imgs/adamstelefon.mp4"></video>
   </section>
 
   <div class="btn">
@@ -56,64 +37,37 @@ console.log(data);
     <img id="hero_pil" src="/imgs/arrow.svg" alt="" />
   </div>
 
-  <video id="video" autoplay loop muted src="/imgs/index_video.mp4"></video>
+  <video id="video" autoplay loop muted src="/imgs/index_video.mp4"></video></Mainlayout
+>
 
-  <div class="discover_sektion">
-    <div class="discover">
-      <p class="discover_tekst">
-        Discover the best <span class="bold">deals, venues</span> and <span
-          class="bold">events</span
-        > near you
-      </p>
-      <div class="discover_btn">
-        <a href="/events"
-          ><Button variant="discover_btn">Discover now</Button></a
-        >
-      </div>
-    </div>
-    <img class="sect_img" src="/imgs/mikkellers_sect.webp" alt="Noget" />
+<div class="discover_sektion">
+  <div class="discover">
+    <p class="discover_tekst">Discover the best <span class="bold">deals, venues</span> and <span class="bold">events</span> near you</p>
+    <div class="discover_btn"><Button variant="discover_btn">Discover now</Button></div>
   </div>
+  <img class="sect_img" src="/imgs/mikkellers_sect.webp" alt="Noget" />
+</div>
 
-  <section class="howtoswingby">
-    <h2 id="howto_overskrift">How To <span id="italic">SWINGBY</span></h2>
-    <Steps />
-    <h3 id="download_app">Download the app</h3>
-    <div class="download_knapper">
-      <a
-        href="https://play.google.com/store/apps/details?id=dk.swing.app&pli=1"
-        target="_blank"
-      >
-        <Button variant="white_btn">
-          <img src="/imgs/playstore.svg" alt="" /> Get it on <br />Google Play</Button
-        >
-      </a>
-      <a href="https://apps.apple.com/us/app/swing/id6443537026" target="_blank"
-        ><Button variant="black_btn">
-          <img src="/imgs/appstore.svg" alt="" /> Download on the <br /> App Store</Button
-        ></a
-      >
-    </div>
-  </section>
-
-  <section class="grå_baggrund">
-    <h2 class="sektion_overskrift">Current Deals</h2>
-    <!-- <Card /> -->
-  </section>
-  <h2 class="sektion_overskrift">Find your location</h2>
-
-  <div class="kort">
-    <iframe
-      width="1000"
-      height="600"
-      frameborder="0"
-      scrolling="no"
-      marginheight="0"
-      marginwidth="0"
-      src="https://maps.google.com/maps?width=100%25&height=600&hl=en&q=Copenhagen+(My%20Business%20Name)&t=&z=14&ie=UTF8&iwloc=B&output=embed"
-    >
-    </iframe>
+<section class="howtoswingby">
+  <h2 id="howto_overskrift">How To <span id="italic">SWINGBY</span></h2>
+  <Steps />
+  <h3 id="download_app">Download the app</h3>
+  <div class="download_knapper">
+    <Button variant="white_btn"> <img src="/imgs/playstore.svg" alt="" /> Get it on <br />Google Play</Button>
+    <Button variant="black_btn"> <img src="/imgs/appstore.svg" alt="" /> Download on the <br /> App Store</Button>
   </div>
-</Mainlayout>
+</section>
+
+<section class="grå_baggrund">
+  <h2 class="sektion_overskrift">Current Deals</h2>
+  <!-- <Card /> -->
+</section>
+<h2 class="sektion_overskrift">Find your location</h2>
+
+<div class="kort">
+  <iframe width="1000" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&height=600&hl=en&q=Copenhagen+(My%20Business%20Name)&t=&z=14&ie=UTF8&iwloc=B&output=embed"> </iframe>
+</div>
+
 <style>
   a {
     text-decoration: none;
