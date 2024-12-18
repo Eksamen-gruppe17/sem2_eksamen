@@ -43,20 +43,16 @@ console.log(event);
       </p>
     </div>
     <div class="card_og_åbningstid">
-                  <div class="container">
+          <div class="container">
               <img class="card_img" src="../imgs/gorilla.webp" alt="" />
-              <div class="tilbud">
+            <div class="tilbud">
                 <h4>Gorilla</h4>
-              </div>
-              <div class="bund">
-                <div class="text">
-                  <p>København V</p>
-                </div>
-                <div class="button">
-                  <Button variant="lilla_btn">More info</Button>
-                </div>
-              </div>
             </div>
+            <div class="bund">
+              <div class="text"><p>København V</p></div>
+              <div class="button"><Button variant="lilla_btn">More info</Button></div>
+          </div>
+        </div>
     </div>
   </div>
 </Mainlayout>
@@ -64,6 +60,52 @@ console.log(event);
 <style>
   body {
     background-color: #fcfdf7;
+  }
+
+  .card_img {
+    max-width: 100%;
+    border-radius: 30px;
+    max-height: 373px;
+    
+  }
+  .container {
+    position: relative;
+    display: grid;
+    min-height: 100px;
+    max-height: 373px;
+    max-width: 373px;
+    margin: auto;
+    margin-bottom: 20px;
+   
+  }
+  .text {
+    position: absolute;
+    bottom: 18px;
+    left: 16px;
+    color: #fcfdf7;
+    font-family: switzer;
+  }
+
+    .tilbud {
+    position: absolute;
+    padding-top: 2rem;
+    justify-self: center;
+    grid-column: 1/2;
+    grid-row: 1 / 2;
+    font-family: switzer;
+    color: #fcfdf7;
+    font-size: 25px;
+  }
+
+    .bund {
+    display: grid;
+    repeat(auto-fit, minmax(200px, 1fr))
+  }
+
+    .button {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
   }
 
   img {
@@ -77,11 +119,11 @@ console.log(event);
 
   #overskrift {
     position: absolute;
-    bottom: 10px;
+    bottom: 30px;
     left: 10px;
     font-family: degular-display;
     font-size: 50px;
-    color: white;
+    color: #fcfdf7;
   }
 
   .tekst_sektion {
@@ -89,33 +131,36 @@ console.log(event);
     margin: 5rem 2rem;
   }
 
-  .adresse_og_beskrivelse {
-    /* justify-self: center; */
-  }
-
   .card_og_åbningstid {
     justify-self: center;
   }
 
-  h3,
-  h4 {
-    color: #568cff;
-  }
 
   h3 {
     font-size: 30px;
     line-height: 1.8rem;
+    color: #568CFF;
   }
 
   h4 {
     font-size: 25px;
     justify-self: center;
+        color: #fcfdf7;
   }
 
   p {
     font-family: degular-text;
     font-weight: 100;
   }
+
+      #dato_og_tid {
+      position: absolute;
+      bottom: 80px;
+      left: 10px;
+      font-family: degular-display;
+      font-size: 30px;
+      color: #fcfdf7;
+    }
 
   .beskrivelse {
     font-size: 20px;
@@ -154,7 +199,7 @@ console.log(event);
     position: absolute;
     bottom: 18px;
     left: 16px;
-    color: white;
+    color: #fcfdf7;
     font-family: switzer;
   }
 
@@ -165,7 +210,7 @@ console.log(event);
     grid-column: 1/2;
     grid-row: 1 / 2;
     font-family: switzer;
-    color: white;
+    color: #fcfdf7;
     font-size: 25px;
   }
 
@@ -199,7 +244,7 @@ console.log(event);
       left: 50px;
       font-family: degular-display;
       font-size: 50px;
-      color: white;
+      color: #fcfdf7;
     }
 
     #overskrift {
@@ -208,7 +253,7 @@ console.log(event);
       left: 50px;
       font-family: degular-display;
       font-size: 100px;
-      color: white;
+      color: #fcfdf7;
     }
 
     .tekst_sektion {

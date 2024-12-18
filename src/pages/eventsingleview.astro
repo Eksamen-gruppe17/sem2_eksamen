@@ -4,7 +4,6 @@ const { address } = Astro.props;
 const { date_time } = Astro.props;
 const { img } = Astro.props;
 const { bydel } = Astro.props;
-import Card from "../components/card.astro";
 import "../styles/style.css";
 import Mainlayout from "../layouts/Mainlayout.astro";
 ---
@@ -28,7 +27,6 @@ import Mainlayout from "../layouts/Mainlayout.astro";
             <p class="beskrivelse">Bar Lummi can be a cosy and stylish place serving unique cocktails, local beers and light bites in a relaxed atmosphere inspired by Scandinavian minimalism and natural materials.</p>
         </div>
         <div class="card_og_åbningstid">
-            <Card />
         </div>
     </div>
 </Mainlayout>
@@ -56,7 +54,7 @@ import Mainlayout from "../layouts/Mainlayout.astro";
              left: 10px;
              font-family: degular-display;
              font-size: 50px;
-             color: white;
+             color: #fcfdf7;
          }
 
                   .tekst_sektion {
@@ -128,7 +126,7 @@ import Mainlayout from "../layouts/Mainlayout.astro";
             left: 50px;
             font-family: degular-display;
             font-size: 50px;
-            color: white;
+            color: #fcfdf7;
          }
      
          #overskrift {
@@ -137,7 +135,7 @@ import Mainlayout from "../layouts/Mainlayout.astro";
              left: 50px;
              font-family: degular-display;
              font-size: 170px;
-             color: white;
+             color: #fcfdf7;
          }
      
          .tekst_sektion {

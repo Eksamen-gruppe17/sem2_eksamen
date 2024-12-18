@@ -2,10 +2,8 @@
 import Button from "../components/Button.astro";
 import Mainlayout from "../layouts/Mainlayout.astro";
 import Steps from "../components/Steps.astro";
-import Card from "../components/card.astro";
-import Button from "../components/button.astro";
-import Footer from "../components/footer.astro";
-import Menu from "../components/Menu.astro";
+import Button from "../components/Button.astro";
+import Card from "../components/Card.astro";
 import "../styles/style.css";
 
 const data = await fetch("https://ksreqhsmdxayccugiwmb.supabase.co/rest/v1/swingby", {
@@ -42,7 +40,7 @@ console.log(data);
 <div class="discover_sektion">
   <div class="discover">
     <p class="discover_tekst">Discover the best <span class="bold">deals, venues</span> and <span class="bold">events</span> near you</p>
-    <div class="discover_btn"><Button variant="discover_btn">Discover now</Button></div>
+    <a href="/events"><div class="discover_btn"><Button variant="discover_btn">Discover now</Button></div></a>
   </div>
   <img class="sect_img" src="/imgs/mikkellers_sect.webp" alt="Noget" />
 </div>
@@ -71,6 +69,9 @@ console.log(data);
 
   <section class="grå_baggrund">
     <h2 class="sektion_overskrift">Current Deals</h2>
+    <div class="flex">
+      <Card/>
+    </div>
   </section>
   <h2 class="sektion_overskrift">Find your location</h2>
 
@@ -89,6 +90,11 @@ console.log(data);
 
 
 <style>
+
+      .flex {
+      display: flex;
+      flex-direction: column;
+    }
   a {
     text-decoration: none;
   }
@@ -105,7 +111,7 @@ console.log(data);
     margin: 2rem 1rem 5rem 1rem;
     font-family: degular-display;
     font-style: italic;
-    color: white;
+    color: #fcfdf7;
   }
   .hero_tekst {
     grid-row: 1 / 2;
@@ -134,7 +140,7 @@ console.log(data);
 
   #outline {
     color: transparent;
-    -webkit-text-stroke: 1px white;
+    -webkit-text-stroke: 1px #fcfdf7;
   }
   .hero h2 {
     font-size: 40px;
@@ -226,7 +232,7 @@ console.log(data);
   .grå_baggrund {
     background-color: #1d1c1c;
     width: 100%;
-    height: 500px;
+    height: 1300px;
     border-radius: 30px 30px 0 0;
   }
 
@@ -237,6 +243,12 @@ console.log(data);
   }
 
   @media screen and (min-width: 800px) {
+    
+    .flex {
+      display: flex;
+      flex-direction: row;
+      margin: 0 10rem 0 10rem;
+    }
     .discover_btn {
       margin-top: 3rem;
     }
@@ -250,7 +262,7 @@ console.log(data);
       margin: 0rem 5rem 10rem 5rem;
       font-family: degular-display;
       font-style: italic;
-      color: white;
+      color: #fcfdf7;
     }
 
     .hero_tekst {
@@ -327,7 +339,7 @@ console.log(data);
 
     #outline {
       color: transparent;
-      -webkit-text-stroke: 1px white;
+      -webkit-text-stroke: 1px #fcfdf7;
     }
 
     #video {
